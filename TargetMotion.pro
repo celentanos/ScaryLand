@@ -32,3 +32,6 @@ FORMS    += widget.ui
 RESOURCES += \
     resources/cursor.qrc \
     resources/sprites.qrc
+
+DISTFILES += \
+    README.md
