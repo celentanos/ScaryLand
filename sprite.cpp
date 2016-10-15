@@ -1,7 +1,6 @@
 #include "sprite.h"
 
-Sprite::Sprite(QPointF point, QObject *parent) :
-    QObject(parent), QGraphicsItem()
+Sprite::Sprite(QPointF point) : QGraphicsObject()
 {
     this->setPos(point);    // Устанавливаем позицию взрыва
     currentFrame = 0;       /// Координату X начала взрыва пули

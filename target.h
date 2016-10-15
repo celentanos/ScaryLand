@@ -5,11 +5,11 @@
 #include <QGraphicsItem>
 #include <QPainter>
 
-class Target : public QObject, public QGraphicsItem
+class Target : public QGraphicsObject
 {
     Q_OBJECT
 public:
-    explicit Target(QObject *parent = 0);
+    explicit Target();
     ~Target();
     /* Функция по нанесению урона,
      * величина урона передаётся в качестве аргумента функции

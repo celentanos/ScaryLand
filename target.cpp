@@ -8,8 +8,7 @@ static int randomBetween(int low, int high)
     return (qrand() % ((high + 1) - low) + low);
 }
 
-Target::Target(QObject *parent) :
-    QObject(parent), QGraphicsItem()
+Target::Target() : QGraphicsObject()
 {
     health = randomBetween(1, 15);  // Задаём случайное значение здоровья
     maxHealth = health;             // Устанавливаем максимальное здоровье равным текущему

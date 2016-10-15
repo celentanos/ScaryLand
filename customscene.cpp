@@ -1,7 +1,6 @@
 #include "customscene.h"
 
-CustomScene::CustomScene(QObject *parent) :
-    QGraphicsScene()
+CustomScene::CustomScene(QObject *parent) : QGraphicsScene()
 {
     Q_UNUSED(parent);
 }

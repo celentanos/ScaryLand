@@ -7,11 +7,11 @@
 #include <QPixmap>
 #include <QPainter>
 
-class Sprite : public QObject, public QGraphicsItem
+class Sprite : public QGraphicsObject
 {
     Q_OBJECT
 public:
-    explicit Sprite(QPointF point, QObject *parent = 0);
+    explicit Sprite(QPointF point);
 
     /* Переопределяем тип Графического объекта взрыва,
      * чтобы пуля могла данный объект игнорировать

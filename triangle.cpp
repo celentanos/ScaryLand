@@ -13,8 +13,7 @@ static qreal normalizeAngle(qreal angle)
     return angle;
 }
 
-Triangle::Triangle(QList<int> *keys, QObject *parent) :
-    QObject(parent), QGraphicsItem()
+Triangle::Triangle(QList<int> *keys) : QGraphicsObject()
 {
     this->keys = keys;
 

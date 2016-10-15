@@ -10,11 +10,11 @@
 
 #include <sprite.h>
 
-class Bullet : public QObject, public QGraphicsItem
+class Bullet : public QGraphicsObject
 {
     Q_OBJECT
 public:
-    explicit Bullet(QPointF start, QPointF end, QGraphicsItem *hero, QObject *parent = 0);
+    explicit Bullet(QPointF start, QPointF end, QGraphicsItem *hero);
     ~Bullet();
     /// Установка CallBack функции
     void setCallbackFunc(void (*func) (QGraphicsItem * item));

@@ -12,11 +12,11 @@
 
 #define COLLISION   1
 
-class Triangle : public QObject, public QGraphicsItem
+class Triangle : public QGraphicsObject
 {
     Q_OBJECT
 public:
-    explicit Triangle(QList<int> *keys, QObject *parent = 0);
+    explicit Triangle(QList<int> *keys);
     ~Triangle();
 
 signals:

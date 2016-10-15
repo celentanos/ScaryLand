@@ -13,8 +13,7 @@ static qreal normalizeAngle(qreal angle)
     return angle;
 }
 
-Bullet::Bullet(QPointF start, QPointF end, QGraphicsItem *hero, QObject *parent)
-    : QObject(parent), QGraphicsItem()
+Bullet::Bullet(QPointF start, QPointF end, QGraphicsItem *hero) : QGraphicsObject()
 {
     this->hero = hero;      /// Запоминаем героя
     this->setRotation(0);   /// Устанавливаем начальный разворот
