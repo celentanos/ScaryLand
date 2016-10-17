@@ -42,7 +42,7 @@ private slots:
     void slotBulletTimer(); /// Слот проверки пули
 
 private:
-    bool shot;              /// Переменная состояния стрельбы
+//    bool shot;              /// Переменная состояния стрельбы
     QTimer *bulletTimer;    /// Таймер пули
     QTimer *gameTimer;      /// Игровой таймер
     QPointF target;         /// Положение курсора

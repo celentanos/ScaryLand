@@ -17,21 +17,17 @@ Triangle::Triangle(QList<int> *keys) : QGraphicsObject()
 {
     this->keys = keys;
 
-    setRotation(0);      /// Устанавливаем исходный разворот треугольника
+    setRotation(0);             /// Устанавливаем исходный разворот треугольника
 
-    target = QPointF(0, 0); /// Устанавливаем изначальное положение курсора
-    shot = false;
+    target = QPointF(0, 0);     /// Устанавливаем изначальное положение курсора
 
     gameTimer = new QTimer();   /// Инициализируем игровой таймер
     /// Подключаем сигнал от таймера и слоту обработки игрового таймера
     connect(gameTimer, &QTimer::timeout, this, &Triangle::slotGameTimer);
-    gameTimer->start(5);   /// Стартуем таймер
+    gameTimer->start(5);        /// Стартуем таймер
 
     bulletTimer = new QTimer(); /// Инициализируем таймер создания пуль
     connect(bulletTimer, &QTimer::timeout, this, &Triangle::slotBulletTimer);
-    bulletTimer->start(1000 / 6); /// Стреляем 6 раз в секунду
-
-
 }
 
 Triangle::~Triangle()
@@ -181,12 +177,14 @@ void Triangle::slotGameTimer()
 
 void Triangle::slotBulletTimer()
 {
-    /// Если стрельба разрешена, то вызываем сигнал на создание пули
-    if(shot) emit signalBullet(mapToScene(0, -25), target);
-
+    emit signalBullet(mapToScene(0, -25), target);
 }
 
 void Triangle::slotShot(bool shot)
 {
-    this->shot = shot;  /// Получаем разрешение или запрет на стрельбу
+    if(shot) {
+        bulletTimer->start(1000 / 6); /// Стреляем 6 раз в секунду
+        emit signalBullet(mapToScene(0, -25), target);  // первый выстрел должен произойти немедленно
+    } else
+        bulletTimer->stop();
 }
